@@ -10,6 +10,7 @@
 
     <modules>
         <module>cloud-alibaba-provider-payment9001</module>
+        <module>cloud-alibaba-api-commons</module>
     </modules>
 
     <packaging>pom</packaging>
