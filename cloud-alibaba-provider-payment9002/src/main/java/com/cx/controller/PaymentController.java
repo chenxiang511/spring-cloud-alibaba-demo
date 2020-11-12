@@ -76,9 +76,11 @@ public class PaymentController {
         return this.discoveryClient;
     }
 
+    /**
+     * 读取nacos配置中心的配置文件
+     * @return config.info
+     */
     @GetMapping("/getConfigInfo")
-    public String getConfigInfo(){
-        return info;
-    }
+    public String getConfigInfo(){ return info; }
 
 }

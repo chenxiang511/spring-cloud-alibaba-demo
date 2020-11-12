@@ -10,9 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 
 @SpringBootApplication
-public class PaymentApplication9001 {
+public class PaymentApplication9002 {
 
     public static void main(String[] args) {
-        SpringApplication.run(PaymentApplication9001.class,args);
+        SpringApplication.run(PaymentApplication9002.class,args);
     }
 }

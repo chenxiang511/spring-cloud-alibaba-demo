@@ -5,14 +5,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @Author cx
- * @Date 2020/11/11 9:35
+ * @Date 2020/11/12 14:36
  * @Version 1.0
  */
 
 @SpringBootApplication
-public class PaymentApplication9001 {
+public class OrderApplication90 {
 
     public static void main(String[] args) {
-        SpringApplication.run(PaymentApplication9001.class,args);
+        SpringApplication.run(OrderApplication90.class,args);
     }
 }

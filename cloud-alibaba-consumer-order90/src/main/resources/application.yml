@@ -1,0 +1,11 @@
+server:
+  port: 90
+
+spring:
+  application:
+    name: cloud-alibaba-order-service
+  cloud:
+    nacos:
+      discovery:
+        namespace: 21614780-809b-498c-814b-7a990d2d2710 #注册到开发环境,服务的调用必须在同一个命名空间下
+        server-addr: localhost:8848 #注册中心地址

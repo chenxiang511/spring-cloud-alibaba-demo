@@ -1,0 +1,14 @@
+spring:
+  application: #dataId 的完整格式: ${prefix}-${spring.profiles.active}.${file-extension}
+    name: cloud-alibaba-payment-service #${prefix} 默认为 spring.application.name 的值，也可以通过配置项 spring.cloud.nacos.config.prefix来配置。
+  profiles:
+    active: dev #${spring.profiles.active}
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #注册中心地址
+        namespace: 21614780-809b-498c-814b-7a990d2d2710 #命名空间ID，开发环境,dev
+      config:
+        file-extension: yml #配置文件类型 ${file-extension}
+        namespace: 21614780-809b-498c-814b-7a990d2d2710 #命名空间ID,开发环境,dev
+        group: cx #组名
