@@ -1,5 +1,7 @@
 package com.cx.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.cx.entities.CommonResult;
 import com.cx.entities.Payment;
 import com.cx.service.PaymentService;
@@ -76,9 +78,30 @@ public class PaymentController {
         return this.discoveryClient;
     }
 
+    /**
+     * 读取nacos配置中心的配置文件
+     * @return config.info
+     */
     @GetMapping("/getConfigInfo")
     public String getConfigInfo(){
         return info;
+    }
+
+    /**
+     * 热点规则限流
+     * @param a 参数0
+     * @param b 参数1
+     * @return String
+     * ps:参数例外项配置值时，http://localhost:9001/payment/testHotKey?b=abc，访问url，b=abc，不要加引号
+     */
+    @GetMapping("/testHotKey")
+    @SentinelResource(value = "testHotKey",blockHandler = "testHotKeyHandler")
+    public String testHotKey(@RequestParam(value = "a",required = false) String a,@RequestParam(value = "b",required = false)String b){
+        return "testHotKey:正常访问!"+"\t"+serverPort;
+    }
+
+    public String testHotKeyHandler(String a,String b,BlockException e){
+        return "testHotKey:限流处理返回"+"\t"+serverPort;
     }
 
 }
